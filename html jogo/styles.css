@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', cursive; /* Fonte estilo Mario */
+    background-color: #87CEEB; /* Cor de fundo azul claro */
+    color: #FFFFFF; /* Cor das letras em branco para se destacar */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o footer fique no fundo */
+}
+
+header {
+    background-color: #FF0000; /* Cor vermelha */
+    color: #FFFFFF; /* Cor das letras em branco */
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Espaça os itens da navbar */
+    align-items: center; /* Alinha verticalmente */
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 10;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: #FFFFFF; text-decoration: none;
+    font-weight: bold; /* Negrito para destacar os links */
+}
+
+.search-form {
+    display: flex; /* Flexbox para alinhar a barra de pesquisa */
+    align-items: center; /* Alinha verticalmente */
+    margin-right: 20px; /* Adiciona espaço à direita da barra de pesquisa */
+}
+
+
+.search-form input {
+    padding: 5px;
+    border: 1px solid #FFFFFF; /* Borda branca */
+    border-radius: 5px;
+}
+
+.search-form button {
+    background-color: #FFCC00; /* Cor amarela */
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive; /* Aplica a mesma fonte do site */
+    color: #FFFFFF; /* Cor das letras em branco */
+    font-weight: bold; /* Negrito para destacar o texto */
+}
+
+main {
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    background-color: #FFCC00; /* Cor amarela */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive; /* Aplica a mesma fonte do site */
+    color: #FFFFFF; /* Cor das letras em branco */
+    font-weight: bold; /* Negrito para destacar o texto */
+}
+
+button:hover {
+    background-color: #FFD700; /* Cor amarela mais clara ao passar o mouse */
+}
+
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: 20px auto; /* Centraliza o carrossel */
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-images img {
+    width: 600px; /* Largura da imagem */
+    height: auto; /* Mantém a proporção */
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+footer {
+    margin-top: auto; /* Faz o footer ficar no fundo */
+    background-color: #FF0000; /* Cor vermelha */
+    color: #FFFFFF; /* Cor das letras em branco */
+    text-align: center;
+    padding: 10px 0;
+}

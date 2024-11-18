@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial - Jogo Mario</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> <!-- Fonte Mario -->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="jogo.html">Jogar</a></li>
+            </ul>
+            <form action="https://www.google.com/search" method="get" class="search-form">
+                <input type="text" name="q" placeholder="Pesquisar...">
+                <button type="submit">Buscar</button>
+            </form>
+        </nav>
+    </header>
+    
+    <main>
+        <h1>Bem-vindo ao Jogo Mario!</h1>
+        <p>Prepare-se para uma aventura emocionante no mundo do Mario!</p>
+        <button onclick="window.location.href='jogo.html'">Jogar Agora</button>
+
+        <!-- Carrossel de Imagens -->
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.22.jpeg" alt="Imagem 1">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.23 (1).jpeg" alt="Imagem 2">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.23 (2).jpeg" alt="Imagem 4">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.23 (3).jpeg" alt="Imagem 5">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.23.jpeg" alt="Imagem 6">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.24 (1).jpeg" alt="Imagem 7">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.24 (2).jpeg" alt="Imagem 8">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.24 (3).jpeg" alt="Imagem 9">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.24.jpeg" alt="Imagem 10">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.25 (1).jpeg" alt="Imagem 11">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.25 (2).jpeg" alt="Imagem 12">
+                <img src="./assets/WhatsApp Image 2024-11-18 at 19.50.25.jpeg" alt="Imagem 13">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Jogo Mario. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.carousel-images img');
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
+            const offset = -currentIndex * 600; // 600 é a largura da imagem
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}px)`;
+        }
+
+        function moveSlide(step) {
+            showSlide(currentIndex + step);
+        }
+
+        // Inicializa o carrossel mostrando a primeira imagem
+        showSlide(currentIndex);
+
+        // Muda a imagem automaticamente a cada 2.5 segundos
+        setInterval(() => {
+            moveSlide(1);
+        }, 3000);
+    </script>
+</body>
+</html>
